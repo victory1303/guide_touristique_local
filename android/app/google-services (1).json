@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "770687374485",
+    "project_id": "guidetouristiquelocal",
+    "storage_bucket": "guidetouristiquelocal.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770687374485:android:68c2024d396de79be2b79c",
+        "android_client_info": {
+          "package_name": "com.example.guide_touristique_local"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv-1oBP3J2VUpYMWTKNqYcafglyiHBLiU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
