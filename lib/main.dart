@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Guide Touristique Local',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: user != null ? const HomePage() : const LoginScreen(),
+      home: user != null ? HomePage() : const LoginScreen(),
       routes: {
         '/map': (context) => const MapScreen(),
       },
