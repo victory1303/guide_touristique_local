@@ -33,6 +33,9 @@ migrate_working_dir/
 /build/
 /coverage/
 
+# Clés API (ne pas commiter de vraies clés)
+.env
+
 # Symbolication related
 app.*.symbols
 

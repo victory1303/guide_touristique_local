@@ -45,5 +45,8 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<!-- REMPLACER REMPLACER_TA_CLE_GOOGLE_MAPS_ICI par votre clé Google Maps (Google Cloud Console) -->
+	<key>GMSServicesProvideAPIKey</key>
+	<string>REMPLACER_TA_CLE_GOOGLE_MAPS_ICI</string>
 </dict>
 </plist>
