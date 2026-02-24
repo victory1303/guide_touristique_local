@@ -25,7 +25,7 @@ class AvisController {
             .map((doc) => AvisModel.fromFirestore(doc.data(), doc.id))
             .toList());
   }
-}
+} 
 Future<List<Map<String, dynamic>>> genererItineraire(
     List<Map<String, dynamic>> monuments,
     double userLat,
