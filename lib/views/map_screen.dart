@@ -13,8 +13,6 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
   GoogleMapController? _mapController;
-  static const LatLng _initialPosition = LatLng(48.8566, 2.3522); // Paris
-  static const int _radius = 5000; // mètres
 
   @override
   void initState() {
@@ -24,7 +22,7 @@ class _MapScreenState extends State<MapScreen> {
 
   Future<void> _loadData() async {
     final controller = context.read<MapController>();
-    await controller.loadAllMarkers(_initialPosition, radius: _radius);
+    await controller.loadAllMarkers();
   }
 
   @override
@@ -44,6 +42,7 @@ class _MapScreenState extends State<MapScreen> {
           if (controller.isLoading && controller.markers.isEmpty) {
             return const Center(child: CircularProgressIndicator());
           }
+
           if (controller.error != null && controller.markers.isEmpty) {
             return Center(
               child: Padding(
@@ -66,12 +65,24 @@ class _MapScreenState extends State<MapScreen> {
               ),
             );
           }
+
+          // Si pas de monuments, affiche juste un message
+          if (controller.markers.isEmpty) {
+            return const Center(
+              child: Text("Aucun monument à afficher sur la carte"),
+            );
+          }
+
+          // Centrer la caméra sur le premier marqueur
+          LatLng initialPosition =
+              controller.markers.first.position;
+
           return Stack(
             children: [
               GoogleMap(
-                initialCameraPosition: const CameraPosition(
-                  target: _initialPosition,
-                  zoom: 12,
+                initialCameraPosition: CameraPosition(
+                  target: initialPosition,
+                  zoom: 13,
                 ),
                 markers: controller.markers,
                 onMapCreated: (GoogleMapController c) {
